@@ -8,3 +8,9 @@
 ![](https://img.shields.io/github/forks/HerndonE/RTS-Game-Using-Unity?style=social)
 
 # Using Unity 2019.4.11f1
+
+Daniel Kufer
+Ethan Herndon
+Matthew Reyes
+Jaclyn Libart 
+
