@@ -28,6 +28,6 @@ public class SceneSwap : MonoBehaviour
 
     public void ExitButton()
     {
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        Application.Quit();
     }
 }

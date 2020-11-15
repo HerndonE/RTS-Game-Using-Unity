@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jaclyn/Scenes/Jaclyn.unity
     guid: 0e5361203cd33434f9a1500374968990
+  - enabled: 1
+    path: Assets/Jaclyn/Scenes/MainMenu.unity
+    guid: 1987d07a00bdb4b4d978ca3c037a4d5d
   m_configObjects: {}
