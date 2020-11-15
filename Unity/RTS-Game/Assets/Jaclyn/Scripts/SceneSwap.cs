@@ -16,8 +16,18 @@ public class SceneSwap : MonoBehaviour
         
     }
 
-    public void Play()
+    public void ClickAnywhere()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
+    public void StartButton()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+    }
+
+    public void ExitButton()
+    {
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 }
