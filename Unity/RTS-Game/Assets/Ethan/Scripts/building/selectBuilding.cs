@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Name: Ethan Herndon
+ * Date: 11/16/2020
+ * Class: CST 426
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +12,7 @@ public class selectBuilding : MonoBehaviour
    
     void Start()
     {
-
+ 
     }
 
     void Update()
@@ -26,6 +31,10 @@ public class selectBuilding : MonoBehaviour
                 {
                     Debug.Log("Now what!?");
                     //TODO
+
+                    GameObject varGameObject = GameObject.FindWithTag("building");
+                    varGameObject.GetComponent<buildUnits>().enabled = true;
+
                     return;
                 }
                 wordPos = hit.point;
