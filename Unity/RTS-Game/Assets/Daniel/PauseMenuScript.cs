@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gravity : MonoBehaviour
+public class PauseMenuScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        Physics.gravity = new Vector3(0, -0.5F, 0);
+        
     }
 
     // Update is called once per frame
