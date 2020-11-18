@@ -18,10 +18,7 @@ public class ButtonHandler : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            /*if (paused)
-                Resume();
-            else*/
-                Pause();
+            Pause();
         }
     }
 
@@ -35,19 +32,4 @@ public class ButtonHandler : MonoBehaviour
         else
             Time.timeScale = 1;
     }
-
-    /*public void Pause()
-    {
-        paused = true;
-        Canvas.SetActive(true);
-
-        Time.timeScale = 0;
-    }
-
-    public void Resume() {
-        paused = false;
-        Canvas.SetActive(false);
-
-        Time.timeScale = 1;
-    }*/
 }
