@@ -7,16 +7,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SupplyScript : MonoBehaviour
+public class buildSupply : MonoBehaviour
 {
     //TODO: CHECK IF SUPPLY IS DESTROYED THEN REMOVE FROM LIST
 
     public GameObject thePrefab;
-    public int supplyCount;
   
     void Start()
     {
-       
+        
     }
 
     void Update()
@@ -43,10 +42,11 @@ public class SupplyScript : MonoBehaviour
                 wordPos = Camera.main.ScreenToWorldPoint(mousePos);
             }
             Instantiate(thePrefab, wordPos + Vector3.up * 1f, Quaternion.identity);
-            supplyCount += 10;
-            Debug.Log("Supply Count:" + supplyCount);
+            //supplyBuildings = GameObject.FindGameObjectsWithTag("supply");
         }
-       
+
+      
+
     }
 
 }
