@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 463634745399066194}
   - component: {fileID: 6649424680814896644}
   - component: {fileID: 8260148346667307777}
+  - component: {fileID: -4817550186173825725}
   m_Layer: 0
   m_Name: Turret 1
   m_TagString: Untagged
@@ -560,7 +561,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 9073737099229163488, guid: f365bd5fbb11e4b4ea43c71c68c1740d, type: 3}
+  enemy: {fileID: 0}
   shottingOffset: {fileID: 8657653901145493444}
+--- !u!135 &-4817550186173825725
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569420811215863498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 1.14, z: 0}
 --- !u!1 &8657653901145493445
 GameObject:
   m_ObjectHideFlags: 0

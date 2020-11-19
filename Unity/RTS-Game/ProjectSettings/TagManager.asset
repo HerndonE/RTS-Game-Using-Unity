@@ -6,6 +6,7 @@ TagManager:
   tags:
   - supply
   - building
+  - Enemy
   layers:
   - Default
   - TransparentFX
