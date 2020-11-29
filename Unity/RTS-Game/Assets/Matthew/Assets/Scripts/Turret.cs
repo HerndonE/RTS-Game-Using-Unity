@@ -14,6 +14,7 @@ public class Turret : MonoBehaviour
     public List<Enemy> currentEnemies;
     public Enemy currentTarget;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +36,10 @@ public class Turret : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Fire Bullet //Need to fire the bullet in the direction of where the turret is facing
-            GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+            //GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+            //Destroy(shot, 3f);
 
-            Destroy(shot, 3f);
 
-            
         }
 
     }
@@ -47,9 +47,12 @@ public class Turret : MonoBehaviour
     //Targeting Stuff
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.tag == "Enemy")
+        
+        if (collider.tag == "Enemy")
         {
-           // target = collider;
+            // target = collider;
+            Enemy newEnemy = collider.GetComponent<Enemy>();
+            currentEnemies.Add(newEnemy);
         }
         /*
         Enemy newEnemy = collider.GetComponent<Enemy>();
