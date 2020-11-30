@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9557cb1c4a816946a9cbfae8dbbccd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 1082053942}
+  pauseMenu: {fileID: 1292958811}
 --- !u!1 &1292958811
 GameObject:
   m_ObjectHideFlags: 0
