@@ -12,6 +12,7 @@ public class buildUnits: MonoBehaviour
 
     public GameObject unit1;
     public GameObject unit2;
+    public GameObject gameManager;
     public Transform spawnPoint;
     public float unit1ProductionTime = 5.0f;
     public float unit1ProductionReset = 5.0f;
@@ -19,6 +20,11 @@ public class buildUnits: MonoBehaviour
     public float unit2ProductionReset = 10.0f;
     private bool unit1InProduction = false;
     private bool unit2InProduction = false;
+    public int unit1SupplyCount = 10;
+    public int unit2SupplyCount = 20;
+    public int unitSupplyLoss;
+    public int unitySupplyCountTemp = 0;
+    public supplyManager getCurrSupply;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +49,13 @@ public class buildUnits: MonoBehaviour
                 spawnPoint = this.transform.Find("spawnPoint");
                 Instantiate(unit1, spawnPoint.position, spawnPoint.rotation);
 
+                unitySupplyCountTemp += unit1SupplyCount;
+                unitSupplyLoss = getCurrSupply.supplyCountManager;
+                Debug.Log("subtracted: " + unitySupplyCountTemp + " from " + unitSupplyLoss);
+
                 GameObject building = GameObject.FindWithTag("building");
                 building.GetComponent<buildUnits>().enabled = false;
+
                 unit1ProductionTime = unit1ProductionReset;
                 unit1InProduction = false;
             }
@@ -63,6 +74,10 @@ public class buildUnits: MonoBehaviour
                 //Transform spawnPoint = transform.Find("/spawnPoint").gameObject;
                 spawnPoint = this.transform.Find("spawnPoint");
                 Instantiate(unit2, spawnPoint.position, spawnPoint.rotation);
+
+                unitySupplyCountTemp += unit2SupplyCount;
+                unitSupplyLoss = getCurrSupply.supplyCountManager;
+                Debug.Log("subtracted: " + unitySupplyCountTemp + " from " + unitSupplyLoss);
 
                 GameObject building = GameObject.FindWithTag("building");
                 building.GetComponent<buildUnits>().enabled = false;

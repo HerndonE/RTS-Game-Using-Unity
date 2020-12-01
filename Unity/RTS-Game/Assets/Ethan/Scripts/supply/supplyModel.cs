@@ -10,7 +10,7 @@ public class supplyModel : MonoBehaviour
     void Start()
     {
         
-        supplyCount += 10;
+        supplyCount = supplyCount + 10;
         Debug.Log("Supply Count:" + supplyCount);
     }
 
