@@ -8,7 +8,7 @@ public class Ally : MonoBehaviour
 
     //private Vector3 direction;
     public Transform target; //public Transform target
-    private float speed = 1.0f;
+    private float speed = 2.0f;
 
     //private Vector3 heading = target.position - transform.position;
 
@@ -23,9 +23,9 @@ public class Ally : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, target.position);
 
-        if(distance > 1.0f)
+        if(distance > 0.5f)
         {
-            Vector3 direction = target.position - transform.position;
+            Vector3 direction = target.position - transform.position;//transform.position is the current objects position
             direction.Normalize();
             transform.position += direction * speed * Time.deltaTime;
         }

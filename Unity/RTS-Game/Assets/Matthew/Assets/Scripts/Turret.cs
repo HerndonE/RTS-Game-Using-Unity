@@ -24,21 +24,24 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            transform.LookAt(target);
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); //Prevents any rotation on the x and z axis's
+        transform.LookAt(target);
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); //Prevents any rotation on the x and z axis's
 
-        //Smoothly transitioning to look at enemy
-
-        //Rotating and Updating Rotation position
-        //yRotation++;
-        //transform.eulerAngles = new Vector3(transform.eulerAngles.x, yRotation, transform.eulerAngles.z);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            
             //Fire Bullet //Need to fire the bullet in the direction of where the turret is facing
-            //GameObject shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
-            //Destroy(shot, 3f);
+            GameObject shot; //= Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+            shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
 
+            Vector3 direction = target.position - transform.position;//transform.position is the current objects position
+            direction.Normalize();
+
+            shot.transform.position += direction * 5 * Time.deltaTime; //Directs the bullet towards the turrets current target
+
+            Destroy(shot, 3f);
+            
 
         }
 
