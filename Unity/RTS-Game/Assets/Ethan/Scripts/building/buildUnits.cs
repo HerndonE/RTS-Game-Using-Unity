@@ -13,18 +13,19 @@ public class buildUnits: MonoBehaviour
     public GameObject unit1;
     public GameObject unit2;
     public GameObject gameManager;
-    public Transform spawnPoint;
+    public Transform spawnPointOne;
+    public Transform spawnPointTwo;
     public float unit1ProductionTime = 5.0f;
     public float unit1ProductionReset = 5.0f;
     public float unit2ProductionTime = 10.0f;
     public float unit2ProductionReset = 10.0f;
     private bool unit1InProduction = false;
     private bool unit2InProduction = false;
-    public int unit1SupplyCount = 10;
-    public int unit2SupplyCount = 20;
-    public int unitSupplyLoss;
-    public int unitySupplyCountTemp = 0;
-    public supplyManager getCurrSupply;
+    //public int unit1SupplyCount = 10;
+    //public int unit2SupplyCount = 20;
+    //public int unitSupplyLoss;
+    //public int unitySupplyCountTemp = 0;
+    //public supplyManager getCurrSupply;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,12 +47,12 @@ public class buildUnits: MonoBehaviour
             if (unit1ProductionTime < 0)
             {
                 //Transform spawnPoint = transform.Find("/spawnPoint").gameObject;
-                spawnPoint = this.transform.Find("spawnPoint");
-                Instantiate(unit1, spawnPoint.position, spawnPoint.rotation);
+                spawnPointOne = this.transform.Find("spawnPointOne");
+                Instantiate(unit1, spawnPointOne.position, spawnPointOne.rotation);
 
-                unitySupplyCountTemp += unit1SupplyCount;
+               /* unitySupplyCountTemp += unit1SupplyCount;
                 unitSupplyLoss = getCurrSupply.supplyCountManager;
-                Debug.Log("subtracted: " + unitySupplyCountTemp + " from " + unitSupplyLoss);
+                Debug.Log("subtracted: " + unitySupplyCountTemp + " from " + unitSupplyLoss);*/
 
                 GameObject building = GameObject.FindWithTag("building");
                 building.GetComponent<buildUnits>().enabled = false;
@@ -72,12 +73,12 @@ public class buildUnits: MonoBehaviour
             if (unit2ProductionTime < 0)
             {
                 //Transform spawnPoint = transform.Find("/spawnPoint").gameObject;
-                spawnPoint = this.transform.Find("spawnPoint");
-                Instantiate(unit2, spawnPoint.position, spawnPoint.rotation);
+                spawnPointTwo = this.transform.Find("spawnPointTwo");
+                Instantiate(unit2, spawnPointTwo.position, spawnPointTwo.rotation);
 
-                unitySupplyCountTemp += unit2SupplyCount;
+              /*  unitySupplyCountTemp += unit2SupplyCount;
                 unitSupplyLoss = getCurrSupply.supplyCountManager;
-                Debug.Log("subtracted: " + unitySupplyCountTemp + " from " + unitSupplyLoss);
+                Debug.Log("subtracted: " + unitySupplyCountTemp + " from " + unitSupplyLoss);*/
 
                 GameObject building = GameObject.FindWithTag("building");
                 building.GetComponent<buildUnits>().enabled = false;

@@ -7,16 +7,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class supplyModel : MonoBehaviour
+public class unitModel : MonoBehaviour
 {
-    public static int supplyCount;
-   
+    public static int unitSupplyCount;
+    public int unitSupplyCost;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        supplyCount = supplyCount + 10;
-        Debug.Log("Supply Count:" + supplyCount);
+
+        unitSupplyCount = unitSupplyCount + unitSupplyCost;
+        Debug.Log("Unit Supply Count:" + unitSupplyCount);
+
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class supplyModel : MonoBehaviour
     }
     void OnDestroy()
     {
-        supplyCount -= 10;
-        Debug.Log("Supply Count:" + supplyCount);
+        unitSupplyCount -= 10;
+        Debug.Log("Unit Supply Count:" + unitSupplyCount);
     }
 }

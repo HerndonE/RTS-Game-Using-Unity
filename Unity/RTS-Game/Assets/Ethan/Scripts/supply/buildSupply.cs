@@ -9,8 +9,7 @@ using UnityEngine;
 
 public class buildSupply : MonoBehaviour
 {
-    //TODO: CHECK IF SUPPLY IS DESTROYED THEN REMOVE FROM LIST
-
+ 
     public GameObject thePrefab;
   
     void Start()
@@ -35,13 +34,18 @@ public class buildSupply : MonoBehaviour
                     Debug.Log("cannot comply!");
                     return;
                 }
+                if (hit.collider.gameObject.tag == "building")
+                {
+                    Debug.Log("cannot comply!");
+                    return;
+                }
                 wordPos = hit.point;
             }
             else
             {
                 wordPos = Camera.main.ScreenToWorldPoint(mousePos);
             }
-            Instantiate(thePrefab, wordPos + Vector3.up * 1f, Quaternion.identity);
+            Instantiate(thePrefab, wordPos + Vector3.up * 0.5f, Quaternion.identity);//use to be 1f
             //supplyBuildings = GameObject.FindGameObjectsWithTag("supply");
         }
 

@@ -14,7 +14,8 @@ public class supplyManager : MonoBehaviour
     public int numOfSupplyBuildings;
     public int supplyCountManager;
     public GameObject mainCamera;
-    public buildUnits supplyCheck;
+    public GameObject[] Factories;
+    //public buildUnits supplyCheck;
     public Text supplyText;
 
     // Start is called before the first frame update
@@ -39,7 +40,30 @@ public class supplyManager : MonoBehaviour
 
         supplyCountManager = supplyModel.supplyCount;
         //Debug.Log("Current Supply" + supplyCountManager);
-        supplyText.text = "Current Supply: " + supplyCheck.unitySupplyCountTemp + "/" + supplyCountManager.ToString();
+        supplyText.text = "Current Supply: " + unitModel.unitSupplyCount + "/" + supplyCountManager.ToString();
+        //supplyCheck.unitySupplyCountTemp + "/" + supplyCountManager.ToString(); old Code
+
+        Factories = GameObject.FindGameObjectsWithTag("building");
+        if (unitModel.unitSupplyCount >= supplyCountManager)
+        {
+          
+            for(int i = 0; i < Factories.Length; i++)
+            {
+                Factories[i].GetComponent<buildUnits>().enabled = false;
+            }
+            
+            //Debug.Log("YOU MUST CONSTRUCT ADDITIONAL PYLONS!");
+
+        }
+     /*   else
+        {
+            for (int i = 0; i < Factories.Length; i++)
+            {
+                Factories[i].GetComponent<buildUnits>().enabled = true;
+            }
+            //Debug.Log("GO GO GO");
+        }*/
+
 
     }
 }
