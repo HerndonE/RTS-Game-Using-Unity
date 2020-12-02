@@ -1,20 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PauseButton : MonoBehaviour
+public class ButtonHandler : MonoBehaviour
 {
-    public static bool paused = false;
+    public static bool paused;
+    public GameObject Canvas;
 
-    public GameObject pauseMenu;
-
-    private void Start()
+    public void Start()
     {
-        pauseMenu.SetActive(false);
+        paused = false;
+        Canvas = GameObject.Find("PauseMenu");
+        Canvas.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Pause();
@@ -24,15 +25,11 @@ public class PauseButton : MonoBehaviour
     public void Pause()
     {
         paused = !paused;
-        pauseMenu.SetActive(paused);
+        Canvas.SetActive(paused);
 
         if (paused)
-        {
             Time.timeScale = 0;
-        }
         else
-        {
             Time.timeScale = 1;
-        }
     }
 }
