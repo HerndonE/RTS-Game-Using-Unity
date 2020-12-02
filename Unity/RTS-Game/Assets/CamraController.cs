@@ -30,7 +30,7 @@ public class CamraController : MonoBehaviour
 
         //move right
         if (Input.GetKey("d") ||
-       Input.mousePosition.x >= Screen.width - panBorderThickness)
+        Input.mousePosition.x >= Screen.width - panBorderThickness)
         {
             pos.x += panSpeed * Time.deltaTime;
         }
@@ -47,7 +47,7 @@ public class CamraController : MonoBehaviour
 
         pos.x = Mathf.Clamp(pos.x, -panLimit.x, panLimit.x);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
-        pos.z = Mathf.Clamp(pos.x, -panLimit.y, panLimit.y);
+        pos.z = Mathf.Clamp(pos.z, -panLimit.y, panLimit.y);
 
         transform.position = pos;
     }
