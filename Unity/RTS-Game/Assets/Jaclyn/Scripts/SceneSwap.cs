@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SceneSwap : MonoBehaviour
 {
+    //Variables
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +21,25 @@ public class SceneSwap : MonoBehaviour
 
     public void ClickAnywhere()
     {
+        click.Play();
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
     public void StartButton()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        click.Play();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Matthew 1");
+    }
+
+    public void BackStartButton()
+    {
+        click.Play();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleMenu");
     }
 
     public void ExitButton()
     {
+        click.Play();
         Application.Quit();
     }
 }
