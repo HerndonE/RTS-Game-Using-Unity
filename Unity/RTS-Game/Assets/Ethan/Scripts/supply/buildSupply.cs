@@ -45,7 +45,7 @@ public class buildSupply : MonoBehaviour
             {
                 wordPos = Camera.main.ScreenToWorldPoint(mousePos);
             }
-            Instantiate(thePrefab, wordPos + Vector3.up * 0.5f, Quaternion.identity);//use to be 1f
+            Instantiate(thePrefab, wordPos + Vector3.up * 2f, Quaternion.identity);//use to be 1f
             //supplyBuildings = GameObject.FindGameObjectsWithTag("supply");
         }
 
