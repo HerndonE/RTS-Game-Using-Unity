@@ -27,6 +27,18 @@ public class Turret : MonoBehaviour
         transform.LookAt(target);
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); //Prevents any rotation on the x and z axis's
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit; //This variable stores location for hit and information about object.
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //Cast ray from main camera to mouse position
+            //Debug.Log("" + hit);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                target = hit.collider.transform; //Set target to hit object
+            }
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
