@@ -8,6 +8,7 @@ TagManager:
   - building
   - Enemy
   - Bullet
+  - mineral
   layers:
   - Default
   - TransparentFX
