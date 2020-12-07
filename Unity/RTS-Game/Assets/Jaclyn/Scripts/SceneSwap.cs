@@ -37,8 +37,9 @@ public class SceneSwap : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("TitleMenu");
     }
 
-    public void endConditions()
+    public void CreditsButton()
     {
+        click.Play();
         UnityEngine.SceneManagement.SceneManager.LoadScene("CreditsMenu");
     }
 
