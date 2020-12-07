@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Bullet
   - mineral
+  - Ally
   layers:
   - Default
   - TransparentFX

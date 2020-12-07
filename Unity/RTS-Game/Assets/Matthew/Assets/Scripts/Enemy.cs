@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
 
     public int health = 100;
 
+    private float FreezY = 10;
+
     //private Vector3 heading = target.position - transform.position;
 
     // Start is called before the first frame update
@@ -23,6 +25,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(transform.position.x, FreezY, transform.position.z);
+
         float distance = Vector3.Distance(transform.position, target.position);
 
         if(distance > 0.5f)

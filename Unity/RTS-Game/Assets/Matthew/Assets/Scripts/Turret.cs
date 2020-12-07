@@ -11,8 +11,8 @@ public class Turret : MonoBehaviour
     public Transform shottingOffset;
 
     //Targeting Stuff
-    public List<Enemy> currentEnemies;
-    public Enemy currentTarget;
+    //public List<Enemy> currentEnemies;
+    //public Enemy currentTarget;
     private int counter = 0;
 
 
@@ -32,8 +32,6 @@ public class Turret : MonoBehaviour
         //    Debug.Log("Unassigning itself");
         //    target = null;
         //}
-        
-
 
         Debug.Log("Current Target: " + target);
         transform.LookAt(target);
@@ -54,11 +52,12 @@ public class Turret : MonoBehaviour
         }
         */
 
-
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             target = null;//Erases current target
         }
+        */
 
             //Automate this(Only fire if a target exists)
         if (target != null) 
@@ -126,12 +125,7 @@ public class Turret : MonoBehaviour
                 //currentEnemies.Add(newEnemy);
             }
         }
-        /*
-        Enemy newEnemy = collider.GetComponent<Enemy>();
-        currentEnemies.Add(newEnemy);
 
-        evaluateTarget(newEnemy);
-        */
     }
 
     void OnTriggerExit(Collider collider)
