@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody myRigidbody;
     public float speed = 25;
     public Transform target; //public Transform target
+    public AudioSource pewpew;
 
     //public Transform target;
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class Bullet : MonoBehaviour
 
     private void Fire()
     {
-        
+        pewpew.Play();
         //myRigidbody.velocity = Vector3.up * speed;
         //Debug.Log("Wwweeeeee");
     }
