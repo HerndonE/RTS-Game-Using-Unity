@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Rigidbody myRigidbody;
-    public float speed = 5;
+    public float speed = 25;
     public Transform target; //public Transform target
 
     //public Transform target;
@@ -29,6 +29,12 @@ public class Bullet : MonoBehaviour
         GameObject theTurret = GameObject.Find("Turret");
         Turret turretScript = theTurret.GetComponent<Turret>();
 
+        if(!turretScript.target)
+        {
+            Destroy(gameObject);
+        }
+
+
         float distance = Vector3.Distance(transform.position, turretScript.target.position);
 
         if (distance > 0.5f)
@@ -44,7 +50,8 @@ public class Bullet : MonoBehaviour
         //Debug.Log("Hello!");
         if (other.tag == "Enemy")
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
+            //Destroy(gameObject);
             Debug.Log("Hello!");
         }
         

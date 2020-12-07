@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour
     //Targeting Stuff
     public List<Enemy> currentEnemies;
     public Enemy currentTarget;
+    private int counter = 0;
 
 
     // Start is called before the first frame update
@@ -24,9 +25,22 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("Transform?: " + transform);
+        //If target is ever itself, nullify the target value
+        //if(target = gameObject.transform)
+        //{
+        //    Debug.Log("Unassigning itself");
+        //    target = null;
+        //}
+        
+
+
+        Debug.Log("Current Target: " + target);
         transform.LookAt(target);
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); //Prevents any rotation on the x and z axis's
 
+        /*
+        //Assigning a target with a click
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit; //This variable stores location for hit and information about object.
@@ -38,11 +52,33 @@ public class Turret : MonoBehaviour
                 target = hit.collider.transform; //Set target to hit object
             }
         }
+        */
 
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
+            target = null;//Erases current target
+        }
+
+            //Automate this(Only fire if a target exists)
+        if (target != null) 
+        {
+             //timer being set
+             if(counter < 90)//Fire Rate
+             {
+               counter += 1;
+             }
+             else
+             {
+               //Fire Bullet, Reset Counter
+                Fire();
+                counter = 0;
+             }
+        }
+         
+        /*
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             //Fire Bullet //Need to fire the bullet in the direction of where the turret is facing
             GameObject shot; //= Instantiate(bullet, shottingOffset.position, Quaternion.identity);
             shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
@@ -56,18 +92,39 @@ public class Turret : MonoBehaviour
             
 
         }
+        */
 
+    }
+
+    private void Fire()
+    {
+        //Fire Bullet //Need to fire the bullet in the direction of where the turret is facing
+        GameObject shot; //= Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+        shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+
+        Vector3 direction = target.position - transform.position;//transform.position is the current objects position
+        direction.Normalize();
+
+        shot.transform.position += direction * 5 * Time.deltaTime; //Directs the bullet towards the turrets current target
+
+        Destroy(shot, 3f);
     }
 
     //Targeting Stuff
     void OnTriggerEnter(Collider collider)
     {
-        
-        if (collider.tag == "Enemy")
+        Debug.Log("Something has entered");
+        if (!target)
         {
-            // target = collider;
-            Enemy newEnemy = collider.GetComponent<Enemy>();
-            currentEnemies.Add(newEnemy);
+            Debug.Log("I have collided with: "+target);
+            if (collider.tag == "Enemy")
+            {
+                Debug.Log("My new target is : " + collider);
+                target = collider.transform;
+                // target = collider;
+                //Enemy newEnemy = collider.GetComponent<Enemy>();
+                //currentEnemies.Add(newEnemy);
+            }
         }
         /*
         Enemy newEnemy = collider.GetComponent<Enemy>();
@@ -75,6 +132,17 @@ public class Turret : MonoBehaviour
 
         evaluateTarget(newEnemy);
         */
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        //Debug.Log("I'm about to unassign: " + target);
+        //Debug.Log("I'm pretty sure it's gonna be: " + collider);
+        //Ignore bullets leaving its radius
+        if(target = collider.transform){
+            Debug.Log("Unassigned: " + target);
+            target = null;
+        }
     }
 
     /*
