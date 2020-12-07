@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TurretB : MonoBehaviour
+public class TurretSound : MonoBehaviour
 {
     //float yRotation = 0;
     public GameObject bullet;

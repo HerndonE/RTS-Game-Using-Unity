@@ -29,5 +29,7 @@ public class Ally : MonoBehaviour
             direction.Normalize();
             transform.position += direction * speed * Time.deltaTime;
         }
+
+        //If Collide with A target, shoot at it, and freeze position till target is null
     }
 }

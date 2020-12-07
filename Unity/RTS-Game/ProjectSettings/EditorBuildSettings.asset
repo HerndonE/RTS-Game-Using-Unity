@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jaclyn/Scenes/CreditsMenu.unity
     guid: eaeededa607e6f24e8af365333f394b9
+  - enabled: 1
+    path: Assets/Final Demo/mainScene.unity
+    guid: 25366512a3831264abd26c3ad07a6166
   m_configObjects: {}

@@ -28,13 +28,18 @@ public class SceneSwap : MonoBehaviour
     public void StartButton()
     {
         click.Play();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Matthew 1");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("mainScene");
     }
 
     public void BackStartButton()
     {
         click.Play();
         UnityEngine.SceneManagement.SceneManager.LoadScene("TitleMenu");
+    }
+
+    public void endConditions()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("CreditsMenu");
     }
 
     public void ExitButton()
