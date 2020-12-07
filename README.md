@@ -9,8 +9,18 @@
 
 # Using Unity 2019.4.11f1
 
-Daniel Kufer
-Ethan Herndon
-Matthew Reyes
-Jaclyn Libart 
+## Daniel Kufer    
+Role: Map design, pause menu, and camera functionality.    
+[Github](https://github.com/lizardgai4) 
+   
+## Ethan Herndon    
+Role: Team/programming lead and base functionality.    
+[Github](https://github.com/HerndonE) 
 
+## Matthew Reyes    
+Role: Model and asset functionality.    
+[Github](https://github.com/Xenvex) 
+
+## Jaclyn Libart    
+Role: UI/UX design and sounds.   
+[Github](https://github.com/Turtleninisoup)  
