@@ -22,6 +22,12 @@ public class SceneSwap : MonoBehaviour
     public void ClickAnywhere()
     {
         click.Play();
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        Invoke("clickclick", 0.8f);
+    }
+
+    public void clickclick()
+    {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
