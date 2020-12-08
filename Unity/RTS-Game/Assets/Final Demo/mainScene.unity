@@ -507,6 +507,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4514142017210515708, guid: 87b7d7089cdd88f419921316f694afcb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514142017439517824, guid: 87b7d7089cdd88f419921316f694afcb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514142017439517839, guid: 87b7d7089cdd88f419921316f694afcb,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514142017439517839, guid: 87b7d7089cdd88f419921316f694afcb,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.97407734
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514142017439517839, guid: 87b7d7089cdd88f419921316f694afcb,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9150610854112231770, guid: 87b7d7089cdd88f419921316f694afcb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2775,6 +2800,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Scavenger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2857228002021077052, guid: b8762c0d67eb6cf4c8d05d4ce1fdd6d6,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 2857228002021077053, guid: b8762c0d67eb6cf4c8d05d4ce1fdd6d6,
         type: 3}

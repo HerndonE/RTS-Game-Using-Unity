@@ -123,4 +123,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac08b7baa2549014aa627f9fc1969087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitSupplyCost: 10
+  unitSupplyCost: 2

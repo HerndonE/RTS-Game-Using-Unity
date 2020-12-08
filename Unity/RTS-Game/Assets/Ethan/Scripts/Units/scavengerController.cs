@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Name: Ethan Herndon
+ * Date: 12/8/2020
+ * Class: CST 426
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

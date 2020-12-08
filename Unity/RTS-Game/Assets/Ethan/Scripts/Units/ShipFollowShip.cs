@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/*
+ * Name: Ethan Herndon
+ * Date: 12/8/2020
+ * Class: CST 426
+ */
+using UnityEngine;
 using System.Collections;
 
 public class ShipFollowShip : MonoBehaviour {
