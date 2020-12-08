@@ -25,41 +25,15 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Transform?: " + transform);
-        //If target is ever itself, nullify the target value
-        //if(target = gameObject.transform)
-        //{
-        //    Debug.Log("Unassigning itself");
-        //    target = null;
-        //}
 
-        Debug.Log("Current Target: " + target);
-        transform.LookAt(target);
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); //Prevents any rotation on the x and z axis's
-
-        /*
-        //Assigning a target with a click
-        if (Input.GetMouseButtonDown(0))
+        if(target)
         {
-            RaycastHit hit; //This variable stores location for hit and information about object.
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //Cast ray from main camera to mouse position
-            //Debug.Log("" + hit);
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                target = hit.collider.transform; //Set target to hit object
-            }
+            transform.LookAt(target);
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); //Prevents any rotation on the x and z axis's
         }
-        */
+        
 
-        /*
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            target = null;//Erases current target
-        }
-        */
-
-            //Automate this(Only fire if a target exists)
+        //Automate this(Only fire if a target exists)
         if (target != null) 
         {
              //timer being set
@@ -118,7 +92,7 @@ public class Turret : MonoBehaviour
             Debug.Log("I have collided with: "+target);
             if (collider.tag == "Enemy")
             {
-                Debug.Log("My new target is : " + collider);
+                //Debug.Log("My new target is : " + collider);
                 target = collider.transform;
                 // target = collider;
                 //Enemy newEnemy = collider.GetComponent<Enemy>();
@@ -134,7 +108,7 @@ public class Turret : MonoBehaviour
         //Debug.Log("I'm pretty sure it's gonna be: " + collider);
         //Ignore bullets leaving its radius
         if(target = collider.transform){
-            Debug.Log("Unassigned: " + target);
+            //Debug.Log("Unassigned: " + target);
             target = null;
         }
     }

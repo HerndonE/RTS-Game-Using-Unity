@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     //private Vector3 direction;
     public Transform target; //public Transform target
-    private float speed = 2.0f;
+    private float speed = 4.0f;
 
     public int health = 100;
 
@@ -25,6 +25,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target)
+        {
+            transform.LookAt(target);
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 90, 0);
+        }
+
         transform.position = new Vector3(transform.position.x, FreezY, transform.position.z);
 
         float distance = Vector3.Distance(transform.position, target.position);

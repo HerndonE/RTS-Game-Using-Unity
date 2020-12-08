@@ -12,6 +12,11 @@ TagManager:
   - Ally
   - scavenger
   - extractor
+  - Base
+  - EnemyTurret
+  - AllyTurret
+  - EnemyBase
+  - AllyBase
   layers:
   - Default
   - TransparentFX

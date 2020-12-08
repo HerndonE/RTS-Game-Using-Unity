@@ -27,35 +27,30 @@ public class AllyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject theTurret = GameObject.Find("Turret");
-        Turret turretScript = theTurret.GetComponent<Turret>();
+        GameObject theAllyCar = GameObject.Find("Ally");
+        Ally AllyCarScript = theAllyCar.GetComponent<Ally>();
 
-        if (!turretScript.target)
+        if (!AllyCarScript.target)
         {
             Destroy(gameObject);
         }
 
-
-        float distance = Vector3.Distance(transform.position, turretScript.target.position);
+        float distance = Vector3.Distance(transform.position, AllyCarScript.target.position);
 
         if (distance > 0.5f)
         {
-            Vector3 direction = turretScript.target.position - transform.position;//transform.position is the current objects position
+            Vector3 direction = AllyCarScript.target.position - transform.position;//transform.position is the current objects position
             direction.Normalize();
             transform.position += direction * speed * Time.deltaTime;
         }
     }
 
-    void OnTriggerEnter(Collider other)
+
+    void OnCollisionEnter(Collision col)
     {
-        //Debug.Log("Hello!");
-        if (other.tag == "Enemy")
+        if (col.gameObject.tag == "EnemyTurret")
         {
-            Destroy(other.gameObject);
-            //Destroy(gameObject);
-            Debug.Log("Hello!");
+            Destroy(gameObject);
         }
-
-
     }
 }

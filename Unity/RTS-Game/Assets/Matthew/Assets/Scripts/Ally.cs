@@ -7,83 +7,117 @@ public class Ally : MonoBehaviour
     private Rigidbody rb;
 
     //private Vector3 direction;
-    //public Transform target; //public Transform target
-    private float speed = 2.0f;
+    public Transform target; //public Transform target
+   // public Transform shottingOffset;
+
+    //public GameObject bullet; //bullet needed
+    private float speed = 4.0f;
 
     public int health = 100;
 
     private float FreezY = 10;
 
-    //Move along the waypoints
-    private Waypoints[] navPoints;
-    private Transform target;
-    private Vector3 direction;
-    public float amplify = 1;//speed
-    private int index = 0;
-    private bool move = true;
+    private bool Collided = false;
+    private int counter = 0;
 
+    //private Vector3 heading = target.position - transform.position;
 
-    /*
+    // Start is called before the first frame update
     void Start()
     {
 
     }
-    */
-    public void StartEnemy(Waypoints[] navigationPath)
-    {
-        navPoints = navigationPath;
-
-        //Place our enemy at the start point
-        transform.position = navPoints[index].transform.position;
-        NextWaypoint();
-
-        //Move towards the next waypoint
-        //Retarget to the following waypoint when we reach our current waypoint
-        //Repeat through all of the waypoints until you reach the end
-    }
-
-
-    //Need to move along multiple waypoints
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        transform.position = new Vector3(transform.position.x, FreezY, transform.position.z); //Freezes 
+        if(target)
+        {
+            transform.LookAt(target);
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 90, 0);
+        }
+        
+
+
+        transform.position = new Vector3(transform.position.x, FreezY, transform.position.z);
 
         float distance = Vector3.Distance(transform.position, target.position);
 
-        if(distance > 0.5f)
+        if (distance > 0.5f)
         {
-            Vector3 direction = target.position - transform.position;//transform.position is the current objects position
+            Vector3 direction = target.position - transform.position;
             direction.Normalize();
             transform.position += direction * speed * Time.deltaTime;
         }
 
-        //If Collide with A target, shoot at it, and freeze position till target is null
-        */
-        if (move)
-        {
-            transform.Translate(direction.normalized * Time.deltaTime * amplify);
 
-            if ((transform.position - target.position).magnitude < .1f)
+        /*
+        if(Collided)
+        {
+            speed = 0f;
+            //timer being set
+            if (counter < 90)//Fire Rate
             {
-                NextWaypoint();
+                counter += 1;
             }
-        }
-    }
-
-    private void NextWaypoint()
-    {
-        if (index < navPoints.Length - 1)
-        {
-            index += 1;
-            target = navPoints[index].transform;
-            direction = target.position - transform.position;
+            else
+            {
+                //Fire Bullet, Reset Counter
+                Fire();
+                counter = 0;
+            }
+            
         }
         else
         {
-            move = false;
+            speed = 4.0f;
+        }
+        */
+
+    }
+
+    /*
+    void OnTriggetEnter(Collider collider)
+    {
+        Debug.Log("I have collided");
+        //It has reached the destination
+        if (target = collider.transform)//if collider.tag == "Goal"
+        {
+            Destroy(gameObject);//Kill itself
         }
     }
+    */
+    /*
+    private void Fire()
+    {
+        GameObject shot; //= Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+        shot = Instantiate(bullet, shottingOffset.position, Quaternion.identity);
+
+        Vector3 direction = target.position - transform.position;//transform.position is the current objects position
+        direction.Normalize();
+
+        shot.transform.position += direction * 5 * Time.deltaTime; //Directs the bullet towards the turrets current target
+
+        Destroy(shot, 3f);
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        Debug.Log("I have collided");
+        if(col.gameObject.tag == "EnemyTurret")
+        {
+            Collided = true;
+        }
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        Debug.Log("I am leaving");
+        if (col.gameObject.tag == "EnemyTurret")
+        {
+            Collided = false;
+        }
+    }
+    */
+
 }

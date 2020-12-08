@@ -297,8 +297,8 @@ GameObject:
   - component: {fileID: 118706081025277274}
   - component: {fileID: 5629732648570049304}
   m_Layer: 0
-  m_Name: Turret 1
-  m_TagString: Untagged
+  m_Name: AllyTurret
+  m_TagString: AllyTurret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

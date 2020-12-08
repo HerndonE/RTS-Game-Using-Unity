@@ -53,7 +53,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(other.gameObject);
             //Destroy(gameObject);
-            Debug.Log("Hello!");
+            //Debug.Log("Hello!");
         }
         
         
