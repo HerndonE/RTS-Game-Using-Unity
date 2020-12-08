@@ -40,7 +40,7 @@ public class SceneSwap : MonoBehaviour
     public void BackStartButton()
     {
         click.Play();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
     public void CreditsButton()
