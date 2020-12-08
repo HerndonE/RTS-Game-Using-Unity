@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     //private Vector3 direction;
     public Transform target; //public Transform target
-    private float speed = 4.0f;
+    public float speed = 4.0f;
 
     public int health = 100;
 

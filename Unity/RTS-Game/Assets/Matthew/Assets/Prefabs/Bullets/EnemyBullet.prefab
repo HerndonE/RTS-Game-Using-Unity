@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8452960786516739767}
   - component: {fileID: 8452960786516739764}
   - component: {fileID: 8452960786516739765}
+  - component: {fileID: 8637065206340302605}
   - component: {fileID: 2567303673767465403}
   - component: {fileID: 4864622643102847861}
   - component: {fileID: 5978193128003509217}
-  - component: {fileID: 8637065206340302605}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Bullet
@@ -97,6 +97,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8637065206340302605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452960786516739722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95aa1397b760594c877d5ccbc9b79a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  target: {fileID: 0}
+  pewpew: {fileID: 5978193128003509217}
 --- !u!114 &2567303673767465403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,18 +237,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8637065206340302605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8452960786516739722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d95aa1397b760594c877d5ccbc9b79a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
-  target: {fileID: 0}
-  pewpew: {fileID: 5978193128003509217}

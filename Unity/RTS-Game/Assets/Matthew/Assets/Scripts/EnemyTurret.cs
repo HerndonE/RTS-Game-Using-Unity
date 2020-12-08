@@ -25,7 +25,7 @@ public class EnemyTurret : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("Current Target: " + target);
+        //Debug.Log("Current Target: " + target);
         transform.LookAt(target);
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); //Prevents any rotation on the x and z axis's
 

@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 916279574262226869, guid: 3746641fbd21bfb458b094cbb627da02, type: 3}
+  speed: 25
   health: 100
 --- !u!65 &6447923337949943287
 BoxCollider:

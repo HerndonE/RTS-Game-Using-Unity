@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ebd2e54edecd54e80d567bee5f6c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 50
   target: {fileID: 0}
   pewpew: {fileID: 6508930872268419723}
 --- !u!114 &3099169009615141073
