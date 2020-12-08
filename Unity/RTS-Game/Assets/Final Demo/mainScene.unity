@@ -548,6 +548,12 @@ PrefabInstance:
       propertyPath: spawnPointThree
       value: 
       objectReference: {fileID: 1151091435}
+    - target: {fileID: 6002221904087471824, guid: 838f618ac7a55a64f872482cc22c6e83,
+        type: 3}
+      propertyPath: unit1
+      value: 
+      objectReference: {fileID: 6390524040173056984, guid: b61d0c8850b18464397271488fde12a0,
+        type: 3}
     - target: {fileID: 6002221904087471831, guid: 838f618ac7a55a64f872482cc22c6e83,
         type: 3}
       propertyPath: m_Constraints

@@ -8,6 +8,7 @@ public class Ally : MonoBehaviour
 
     //private Vector3 direction;
     public Transform target; //public Transform target
+    //public GameObject target;
    // public Transform shottingOffset;
 
     //public GameObject bullet; //bullet needed
@@ -25,7 +26,7 @@ public class Ally : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+  
     }
 
     // Update is called once per frame
