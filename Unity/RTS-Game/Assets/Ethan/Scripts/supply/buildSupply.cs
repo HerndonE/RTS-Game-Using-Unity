@@ -40,6 +40,19 @@ public class buildSupply : MonoBehaviour
                     Debug.Log("cannot comply!");
                     return;
                 }
+
+                if (hit.collider.gameObject.tag == "mineral")
+                {
+                    Debug.Log("cannot comply!");
+                    return;
+                }
+
+                if (hit.collider.gameObject.tag == "extractor")
+                {
+                    Debug.Log("cannot comply!");
+                    return;
+                }
+
                 wordPos = hit.point;
             }
             else

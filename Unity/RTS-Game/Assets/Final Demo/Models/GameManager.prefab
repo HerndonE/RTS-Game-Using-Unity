@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4011578675659261592}
   - component: {fileID: 1981483951921275670}
   - component: {fileID: 1039714328109971396}
+  - component: {fileID: 5928054918650171334}
   - component: {fileID: 837812489958424837}
   m_Layer: 0
   m_Name: GameManager
@@ -51,6 +52,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   Factories: []
   supplyText: {fileID: 0}
+  resourceText: {fileID: 0}
 --- !u!114 &1981483951921275670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +79,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuMusic: {fileID: 837812489958424837}
+--- !u!114 &5928054918650171334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4011578675659261591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394fb1794a7742b4da761a98602b6570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 0}
 --- !u!82 &837812489958424837
 AudioSource:
   m_ObjectHideFlags: 0

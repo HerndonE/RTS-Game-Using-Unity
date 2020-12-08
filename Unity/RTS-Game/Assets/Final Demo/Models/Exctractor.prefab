@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 7686214311968675609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.8018374, y: -0.3286742, z: -1.5512328}
-  m_LocalScale: {x: 5, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 5, z: 5}
   m_Children:
   - {fileID: 6809883774568363178}
   m_Father: {fileID: 0}
@@ -234,4 +234,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfeda8617e86a1c47bf91fae442d4f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCount: 5
+  mineral: {fileID: 0}
