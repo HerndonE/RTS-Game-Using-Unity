@@ -5,15 +5,36 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Final Demo/mainScene.unity
-    guid: 25366512a3831264abd26c3ad07a6166
+  - enabled: 0
+    path: Assets/Jaclyn/Scenes/TitleMenuJ.unity
+    guid: 979ba593bf9a3ad4a91de048fe0cec83
+  - enabled: 0
+    path: Assets/Jaclyn/Scenes/Pause Menu.unity
+    guid: 25bc1e33fe46d054a9dc9877fb268223
+  - enabled: 0
+    path: Assets/Jaclyn/Scenes/GameScene.unity
+    guid: 5e1df066b55824d4982b4c370977b121
+  - enabled: 0
+    path: Assets/Jaclyn/Scenes/Jaclyn.unity
+    guid: 0e5361203cd33434f9a1500374968990
+  - enabled: 0
+    path: Assets/Jaclyn/Scenes/MainMenuJ.unity
+    guid: 1987d07a00bdb4b4d978ca3c037a4d5d
+  - enabled: 0
+    path: Assets/Jaclyn/Borrowed/Matthew 1.unity
+    guid: a63a2a26068a8cc438c69f02d0b73117
+  - enabled: 0
+    path: Assets/Jaclyn/Scenes/CreditsMenuJ.unity
+    guid: eaeededa607e6f24e8af365333f394b9
   - enabled: 1
     path: Assets/Final Demo/TitleMenu.unity
     guid: 8caba5108c5a1bb47a14eb7a90105317
   - enabled: 1
     path: Assets/Final Demo/MainMenu.unity
     guid: ce02bbf8496747344b849467866b1980
+  - enabled: 1
+    path: Assets/Final Demo/mainScene.unity
+    guid: 25366512a3831264abd26c3ad07a6166
   - enabled: 1
     path: Assets/Final Demo/CreditsMenu.unity
     guid: cec5c272aceecce4495ccc8fd47aad2e

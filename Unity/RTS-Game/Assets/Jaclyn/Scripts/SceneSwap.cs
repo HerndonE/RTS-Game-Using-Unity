@@ -22,6 +22,12 @@ public class SceneSwap : MonoBehaviour
     public void ClickAnywhere()
     {
         click.Play();
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        Invoke("clickclick", 0.8f);
+    }
+
+    public void clickclick()
+    {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
@@ -34,11 +40,12 @@ public class SceneSwap : MonoBehaviour
     public void BackStartButton()
     {
         click.Play();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("TitleMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
-    public void endConditions()
+    public void CreditsButton()
     {
+        click.Play();
         UnityEngine.SceneManagement.SceneManager.LoadScene("CreditsMenu");
     }
 
