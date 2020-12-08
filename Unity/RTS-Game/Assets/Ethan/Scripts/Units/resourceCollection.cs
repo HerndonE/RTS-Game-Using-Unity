@@ -7,13 +7,24 @@ public class resourceCollection : MonoBehaviour
 
     public float resourceGatheringTime = 5.0f;
     private bool gatheringInProduction = false;
+
     public Transform target;
-    public float speed = 10;
+    public Transform mineral;
+    public Transform extractor;
+    private float speed = 10;
+
+
+    private bool toMin = false;
+    private bool toBuild = false;
+
+    private bool gamePaused = false;
+    private Transform myTransform;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        myTransform = transform;
     }
 
     // Update is called once per frame
@@ -21,22 +32,22 @@ public class resourceCollection : MonoBehaviour
     {
 
         if (this.GetComponent<NomadClick>().enabled == false) {
-            Collider m_Collider = GetComponent<Collider>();
-             m_Collider.enabled = !m_Collider.enabled;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
             resourceGatheringTime -= Time.deltaTime;
             Debug.Log("Time Left:" + Mathf.Round(resourceGatheringTime));
-            if (resourceGatheringTime < 0)
+            if (resourceGatheringTime <= 0)
             {
                 Debug.Log("Resource gathered");
-                this.GetComponent<NomadClick>().enabled = true;
+               
+                //this.GetComponent<NomadClick>().enabled = true;
                 gatheringInProduction = false;
-                float step = speed * Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position, target.position, step);
-                //Todo Gather Resources and GoTo building and repeat
+                transform.gameObject.SetActive(false);
+                instantiateCollector();
+               
             }
+
+
         }
-
-
     }
 
     void OnCollisionEnter(Collision col)
@@ -44,24 +55,30 @@ public class resourceCollection : MonoBehaviour
         if (col.gameObject.tag == "mineral")
         {
             Debug.Log("I am at minerals");
+            Destroy(col.collider.gameObject);
             gatheringInProduction = true;
             if (gatheringInProduction)
             {
                 this.GetComponent<NomadClick>().enabled = false;
+                toBuild = true;
+
+
             }
         }
-
     }
 
-    void OnCollisionExit(Collision col)
+    void instantiateCollector()
     {
-        if (col.gameObject.tag == "mineral")
+     
+        //transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if (toBuild == true)
         {
-            Debug.Log("I left minerals");
-            this.GetComponent<NomadClick>().enabled = true;
-
+            Instantiate(extractor, myTransform.position, Quaternion.identity);
+            toBuild = false;
         }
-
+      
     }
+
+   
 
 }

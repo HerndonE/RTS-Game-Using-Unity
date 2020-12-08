@@ -11,6 +11,7 @@ public class buildSupply : MonoBehaviour
 {
  
     public GameObject thePrefab;
+    public static int minCost;
   
     void Start()
     {
@@ -46,6 +47,7 @@ public class buildSupply : MonoBehaviour
                 wordPos = Camera.main.ScreenToWorldPoint(mousePos);
             }
             Instantiate(thePrefab, wordPos + Vector3.up * 2f, Quaternion.identity);//use to be 1f
+            minCost = minCost - 10;
             //supplyBuildings = GameObject.FindGameObjectsWithTag("supply");
         }
 

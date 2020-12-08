@@ -13,10 +13,12 @@ public class supplyManager : MonoBehaviour
 
     public int numOfSupplyBuildings;
     public int supplyCountManager;
+   // public int mineralCountManager;
     public GameObject mainCamera;
     public GameObject[] Factories;
     //public buildUnits supplyCheck;
     public Text supplyText;
+    public Text resourceText;
 
     // Start is called before the first frame update
     void Start()
@@ -28,20 +30,24 @@ public class supplyManager : MonoBehaviour
     void Update()
     {
 
-        if (GameObject.FindGameObjectsWithTag("supply").Length >= numOfSupplyBuildings)
+       if (((pumpResources.resourceCount + buildSupply.minCost + buildUnits.unit1MinCost + buildUnits.unit2MinCost) <= 0) || GameObject.FindGameObjectsWithTag("supply").Length >= numOfSupplyBuildings)
         {
             mainCamera.GetComponent<buildSupply>().enabled = false;
         }
-        else
+        else if((pumpResources.resourceCount >= 10))
         {
             mainCamera.GetComponent<buildSupply>().enabled = true;
-          
-        }
 
-        supplyCountManager = supplyModel.supplyCount;
+        }
+      
+
+            supplyCountManager = supplyModel.supplyCount;
         //Debug.Log("Current Supply" + supplyCountManager);
         supplyText.text = "Current Supply: " + unitModel.unitSupplyCount + "/" + supplyCountManager.ToString();
+
+        resourceText.text = pumpResources.resourceCount + buildSupply.minCost + buildUnits.unit1MinCost + buildUnits.unit2MinCost + " Minerals";
         //supplyCheck.unitySupplyCountTemp + "/" + supplyCountManager.ToString(); old Code
+
 
         Factories = GameObject.FindGameObjectsWithTag("building");
         if (unitModel.unitSupplyCount >= supplyCountManager)
